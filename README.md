@@ -1,4 +1,1 @@
-# Demo.DWS ![GitHub release](https://img.shields.io/github/release/ajeetx/Demo.DWS.svg?style=for-the-badge) ![Maintenance](https://img.shields.io/maintenance/yes/2019.svg?style=for-the-badge)
-
-|![GitHub Release Date](https://img.shields.io/github/release-date/ajeetx/Demo.DWS.svg?style=plastic) |[![.Net Framework](https://img.shields.io/badge/DotNet-2.1-blue.svg?style=plastic)](https://www.microsoft.com/net/download/dotnet-core/2.1) | ![GitHub language count](https://img.shields.io/github/languages/count/ajeetx/Demo.DWS.svg?style=plastic)| ![GitHub top language](https://img.shields.io/github/languages/top/ajeetx/Demo.DWS.svg) |![GitHub repo size in bytes](https://img.shields.io/github/repo-size/ajeetx/Demo.DWS.svg) 
-| ---          | ---        | ---      | ---       | --- |
+# Demo.DWS 
