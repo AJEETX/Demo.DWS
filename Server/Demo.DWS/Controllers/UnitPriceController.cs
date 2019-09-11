@@ -36,6 +36,8 @@ namespace Demo.DWS.Controllers
         [HttpGet("{unitPriceType}")]
         public IActionResult Get(string unitPriceType)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
                 var unitPrices = _fileService.GetUnitPrices(unitPriceType);
