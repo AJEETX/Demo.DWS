@@ -9,7 +9,7 @@ namespace Demo.DWS.Service
     public interface ILeastExpensivePriceService : IPriceService
     {
     }
-    public class LeastExpensivePriceService : PriceService, ILeastExpensivePriceService
+    public class LeastExpensivePriceService : PriceServiceBase, ILeastExpensivePriceService
     {
         public LeastExpensivePriceService(DataContext context) : base(context)
         {

@@ -8,7 +8,7 @@ namespace Demo.DWS.Service
     public interface IMostExpensivePriceService : IPriceService
     {
     }
-    public class MostExpensivePriceService : PriceService, IMostExpensivePriceService
+    public class MostExpensivePriceService : PriceServiceBase, IMostExpensivePriceService
     {
         public MostExpensivePriceService(DataContext context) : base(context)
         {

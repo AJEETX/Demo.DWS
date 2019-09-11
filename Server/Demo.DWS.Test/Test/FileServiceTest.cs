@@ -16,15 +16,15 @@ namespace Demo.DWS.Test.Test
             //given
             IEnumerable<Input> input = new List<Input> { new Input { UnitID="ABC", Date=DateTime.Now, UnitPrice="1.22" } };
             var moqPriceServiceCtx = new Mock<IPriceServiceCtx>();
-            var moqFileDataService = new Mock<IFileDataService>();
-            moqFileDataService.Setup(m => m.AddFileData(It.IsAny<IEnumerable<Input>>())).Verifiable();
-            var sut = new FileService(moqPriceServiceCtx.Object, moqFileDataService.Object);
+            var moqFileDataService = new Mock<IPriceDataService>();
+            moqFileDataService.Setup(m => m.AddUnitPriceData(It.IsAny<IEnumerable<Input>>())).Verifiable();
+            var sut = new UnitPriceService(moqPriceServiceCtx.Object, moqFileDataService.Object);
 
             //when
-            sut.AddFileData(input);
+            sut.AddUnitPriceData(input);
 
             //then
-            moqFileDataService.Verify(v => v.AddFileData(It.IsAny<IEnumerable<Input>>()), Times.Once);
+            moqFileDataService.Verify(v => v.AddUnitPriceData(It.IsAny<IEnumerable<Input>>()), Times.Once);
         }
 
         [Fact]
@@ -33,15 +33,15 @@ namespace Demo.DWS.Test.Test
             //given
             IEnumerable<Input> input = new List<Input> {};
             var moqPriceServiceCtx = new Mock<IPriceServiceCtx>();
-            var moqFileDataService = new Mock<IFileDataService>();
-            moqFileDataService.Setup(m => m.AddFileData(It.IsAny<IEnumerable<Input>>())).Verifiable();
-            var sut = new FileService(moqPriceServiceCtx.Object, moqFileDataService.Object);
+            var moqFileDataService = new Mock<IPriceDataService>();
+            moqFileDataService.Setup(m => m.AddUnitPriceData(It.IsAny<IEnumerable<Input>>())).Verifiable();
+            var sut = new UnitPriceService(moqPriceServiceCtx.Object, moqFileDataService.Object);
 
             //when
-            sut.AddFileData(input);
+            sut.AddUnitPriceData(input);
 
             //then
-            moqFileDataService.Verify(v => v.AddFileData(It.IsAny<IEnumerable<Input>>()), Times.Never);
+            moqFileDataService.Verify(v => v.AddUnitPriceData(It.IsAny<IEnumerable<Input>>()), Times.Never);
         }
     }
 }

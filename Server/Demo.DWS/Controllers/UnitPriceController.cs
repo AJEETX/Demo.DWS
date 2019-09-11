@@ -12,10 +12,10 @@ namespace Demo.DWS.Controllers
     [ApiController]
     public class UnitPriceController : ControllerBase
     {
-        IFileService _fileService;
-        public UnitPriceController(IFileService fileService)
+        IUnitPriceService _unitPriceService;
+        public UnitPriceController(IUnitPriceService unitPriceService)
         {
-            _fileService = fileService;
+            _unitPriceService = unitPriceService;
         }
 
         [HttpPost]
@@ -25,7 +25,7 @@ namespace Demo.DWS.Controllers
                 return BadRequest(ModelState);
             try
             {
-                _fileService.AddFileData(requests);
+                _unitPriceService.AddUnitPriceData(requests);
                 return Get("");
             }
             catch (Exception ex)
@@ -40,7 +40,7 @@ namespace Demo.DWS.Controllers
                 return BadRequest(ModelState);
             try
             {
-                var unitPrices = _fileService.GetUnitPrices(unitPriceType);
+                var unitPrices = _unitPriceService.GetUnitPrices(unitPriceType);
                 return Ok(unitPrices);
             }
             catch (Exception ex)

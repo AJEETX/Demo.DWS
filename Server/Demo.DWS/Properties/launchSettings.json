@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "BYO": {
+    "Demo": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

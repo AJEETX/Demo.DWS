@@ -8,10 +8,10 @@ namespace Demo.DWS.Service
     {
         IEnumerable<Output> GetUnitPrices();
     }
-    public abstract class PriceService
+    public abstract class PriceServiceBase
     {
         protected DataContext _context;
-        public PriceService(DataContext context)
+        public PriceServiceBase(DataContext context)
         {
             _context = context;
         }

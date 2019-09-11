@@ -5,19 +5,32 @@ using System.Linq;
 
 namespace Demo.DWS.Service
 {
-    public interface IFileService
+    public interface IUnitPriceService
     {
+        void AddUnitPriceData(IEnumerable<Input> unitPriceDataList);
         IEnumerable<Output> GetUnitPrices(string unitPriceType);
-        void AddFileData(IEnumerable<Input> fileData);
     }
-    public class FileService : IFileService
+    public class UnitPriceService : IUnitPriceService
     {
         IPriceServiceCtx _priceServiceCtx;
-        IFileDataService _fileDataService;
-        public FileService(IPriceServiceCtx priceServiceCtx, IFileDataService fileDataService)
+        IPriceDataService _priceDataService;
+        public UnitPriceService(IPriceServiceCtx priceServiceCtx, IPriceDataService priceDataService)
         {
             _priceServiceCtx = priceServiceCtx;
-            _fileDataService = fileDataService;
+            _priceDataService = priceDataService;
+        }
+        public void AddUnitPriceData(IEnumerable<Input> unitPriceDataList)
+        {
+            if (unitPriceDataList == null || unitPriceDataList.Count() == 0)
+                return;
+            try
+            {
+                _priceDataService.AddUnitPriceData(unitPriceDataList);
+            }
+            catch (Exception)
+            {
+                //shout/catch/throw/log
+            }
         }
         public IEnumerable<Output> GetUnitPrices(string unitPriceType)
         {
@@ -28,19 +41,6 @@ namespace Demo.DWS.Service
             catch (Exception)
             {
                 return null; //shout/catch/throw/log
-            }
-        }
-        public void AddFileData(IEnumerable<Input> fileData)
-        {
-            if (fileData == null || fileData.Count() == 0)
-                return;
-            try
-            {
-                _fileDataService.AddFileData(fileData);
-            }
-            catch (Exception)
-            {
-                //shout/catch/throw/log
             }
         }
     }

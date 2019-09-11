@@ -8,7 +8,7 @@ namespace Demo.DWS.Service
     public interface IAllPriceService : IPriceService
     {
     }
-    public class AllPriceService : PriceService, IAllPriceService
+    public class AllPriceService : PriceServiceBase, IAllPriceService
     {
         public AllPriceService(DataContext context) : base(context)
         {

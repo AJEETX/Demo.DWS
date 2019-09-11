@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace Demo.DWS.Service
 {
-    public interface IFileDataService
+    public interface IPriceDataService
     {
-        void AddFileData(IEnumerable<Input> model);
+        void AddUnitPriceData(IEnumerable<Input> unitPriceDataList);
     }
-    public class FileDataService : PriceService, IFileDataService
+    public class PriceDataService : PriceServiceBase, IPriceDataService
     {
-        public FileDataService(DataContext context) : base(context)
+        public PriceDataService(DataContext context) : base(context)
         {
 
         }
-        public void AddFileData(IEnumerable<Input> model)
+        public void AddUnitPriceData(IEnumerable<Input> unitPriceDataList)
         {
             try
             {
-                _context.AddRange(model);
+                _context.AddRange(unitPriceDataList);
                 _context.SaveChanges();
             }
             catch (Exception)

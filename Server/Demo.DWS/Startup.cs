@@ -26,9 +26,9 @@ namespace Demo.DWS
             services.AddDbContext<DataContext>(x => x.UseInMemoryDatabase("TestDb"));
             services.AddCors();
             services.AddMvc();
-            services.AddScoped<IFileService, FileService>();
+            services.AddScoped<IUnitPriceService, UnitPriceService>();
             services.AddScoped<IAllPriceService, AllPriceService>();
-            services.AddScoped<IFileDataService, FileDataService>();
+            services.AddScoped<IPriceDataService, PriceDataService>();
             services.AddScoped<ILeastExpensivePriceService, LeastExpensivePriceService>();
             services.AddScoped<IMostExpensivePriceService, MostExpensivePriceService>();
             services.AddScoped<IPriceServiceCtx, PriceServiceCtx>();
