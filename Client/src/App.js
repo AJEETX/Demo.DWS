@@ -75,10 +75,9 @@ class App extends Component {
         <div className="dropzone">
           <Dropzone accept=".csv" onDropAccepted={this.onDrop.bind(this)}>            
           </Dropzone>
-          <br /><br /><br />
         </div>
-        <h2>Upload or drop your <font size={fontSize} color="#00A4FF">CSV</font><br /> file here.</h2>
-        <button onClick = {this.Bottom}>5 Least expensive</button>
+        <h2>Upload or drop your <font size={fontSize} color="#00A4FF">CSV</font> file above in the box.</h2>
+        <button onClick = {this.Bottom}>5 Least expensive</button> &nbsp;
         <button onClick = {this.Top}>5 Most expensive</button>
         { response && 
         <table>
